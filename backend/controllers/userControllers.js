@@ -1,4 +1,5 @@
-import { User } from "../models/postSchema";
+import { User } from "../models/postSchema.js";
+import bcryptjs from "bcryptjs";
 
 export const Register = async (req, res) => {
     try {
@@ -17,13 +18,21 @@ export const Register = async (req, res) => {
             })
         }
 
+        const hashedPassword = await bcryptjs.hash(password, 16);
+
         await User.create ({
             name,
             username,
             email,
-            password
-        })
-    } catch (error) {
+            password: hashedPassword
+        });
 
+        return res.status(201).json ({
+            message: "Account created successfully.",
+            success: true
+        })
+
+    } catch (error) {
+        console.log(error);
     }
 }
