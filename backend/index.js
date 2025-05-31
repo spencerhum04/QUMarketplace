@@ -20,11 +20,7 @@ app.use(cookieParser());
 // api
 app.use("/api/v1/user", userRoute);
 
-app.get("/", (req, res) => {
-    res.status(200).json ({
-        message: "coming from backend"
-    })
-})
+"https://localhost:8080/api/v1/user/register"
 
 app.listen(process.env.PORT, () => {
     console.log(`Listening on port ${process.env.PORT}`);
