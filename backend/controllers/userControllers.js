@@ -1,4 +1,4 @@
-import { User } from "../models/postSchema.js";
+import { User } from "../models/userSchema.js";
 import bcryptjs from "bcryptjs";
 
 export const Register = async (req, res) => {
