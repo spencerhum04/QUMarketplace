@@ -1,10 +1,11 @@
 import express from "express";
 import dotenv from "dotenv";
+import databaseConection from "./config/database.js";
 
 dotenv.config({
     path: ".env"
 })
-
+databaseConection();
 const app = express();
 
 app.listen(process.env.PORT, () => {
