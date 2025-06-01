@@ -3,14 +3,21 @@ import bcryptjs from "bcryptjs";
 
 export const Register = async (req, res) => {
     try {
-        const {name, username, email, apssword} = req.body;
+        if (!req.body) {
+            return res.status(400).json({
+                message: "Missing request body.",
+                success: false
+            });
+        }
+
+        const {name, username, email, password} = req.body;
         if(!name || !username || !email || !password) {
             return res.status(401).json ({
                 message: "All fields are required.",
                 success: false
             })
         }
-        const user = await User.findOne(email);
+        const user = await User.findOne({ email });
         if(user) {
             return res.status(401).json ({
                 message: "User already exists.",
