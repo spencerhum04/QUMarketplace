@@ -13,10 +13,6 @@ const postSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     },
-    bookmarks: {
-        type: Array,
-        default: []
-    },
 }, {timestamps: true})
 
 export const Post = mongoose.model("Post", postSchema);

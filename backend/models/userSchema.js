@@ -22,7 +22,11 @@ const userSchema = new mongoose.Schema({
     contacts: {
         type: Array,
         default: []
-    }
+    },
+    bookmarks: {
+        type: Array,
+        default: []
+    },
 }, {timestamps: true})
 
 export const User = mongoose.model("User", userSchema);

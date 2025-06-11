@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import databaseConection from "./config/database.js";
 import cookieParser from "cookie-parser";
 import userRoute from "./routes/userRoute.js";
+import postRoute from "./routes/postRoute.js";
 
 dotenv.config({
     path: ".env"
@@ -17,6 +18,7 @@ app.use(cookieParser());
 
 // api
 app.use("/api/v1/user", userRoute);
+app.use("/api/v1/post", postRoute);
 
 app.listen(process.env.PORT, () => {
     console.log(`Listening on port ${process.env.PORT}`);
