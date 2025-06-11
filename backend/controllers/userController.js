@@ -2,7 +2,7 @@ import { User } from "../models/userSchema.js";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 
-export const Register = async (req, res) => {
+export const register = async (req, res) => {
     try {
         if (!req.body) {
             return res.status(400).json({
@@ -45,7 +45,7 @@ export const Register = async (req, res) => {
     }
 }
 
-export const Login = async (req, res) => {
+export const login = async (req, res) => {
     try {
         const {email, password} = req.body;
         if (!email || !password) {
@@ -83,9 +83,34 @@ export const Login = async (req, res) => {
     }
 }
 
-export const Logout = async (req, res) => {
+export const logout = async (req, res) => {
     return res.cookie("token", "", {expiresIn:new Date(Date.now())}).json ({
         message: "User has logged out successfully.",
         success: true
     })
+}
+
+export const bookmark = async (req, res) => {
+    try {
+        const loggedInUserId = req.body.id;
+        const postId = req.params.id;
+        const user = await User.findById(loggedInUserId);
+        if (user.bookmarks.includes(postId)) {
+            // remove bookmark
+            await User.findByIdAndUpdate(loggedInUserId, {$pull:{bookmarks:postId}});
+            return res.status(200).json ({
+                message: "Removed bookmark successfully.",
+                success: true
+            })
+        } else {
+            // add bookmark
+            await User.findByIdAndUpdate(loggedInUserId, {$push:{bookmarks:postId}});
+            return res.status(200).json ({
+                message: "Added bookmark successfully.",
+                success: true
+            })
+        }
+    } catch (error) {
+        console.log(error);
+    }
 }
