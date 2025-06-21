@@ -9,6 +9,10 @@ export default function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const loginSignupHandler = () => {
+        setLogin(!login);
+    }
+
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log(name, username, email, password);
@@ -17,7 +21,7 @@ export default function Register() {
     return (
         <>
             <Navbar />
-            <form>
+            <form onSubmit={submitHandler} className="flex flex-col gap-y-10">
                 <div className="flex flex-col gap-y-2 w-40">
                     <label>Name</label>
                     <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="bg-white text-black" />
@@ -34,6 +38,7 @@ export default function Register() {
                     <label>Password</label>
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="bg-white text-black" />
                 </div>
+                <button onClick={loginSignupHandler} className="bg-blue-300 p-4 w-40">Sign up</button>
             </form>
         </>
     )
