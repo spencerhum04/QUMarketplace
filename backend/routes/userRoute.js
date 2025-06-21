@@ -1,6 +1,5 @@
 import express from "express";
 import { bookmark, getOtherUsers, getProfile, login, logout, register } from "../controllers/userController.js";
-import { bookmark, login, logout, register } from "../controllers/userController.js";
 import isAuthenticated from "../config/auth.js";
 
 const router = express.Router();
