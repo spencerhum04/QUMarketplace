@@ -1,5 +1,11 @@
 # QUMarketplace
 
+[![Static Badge](https://img.shields.io/badge/React-09d9fe?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
+[![Static Badge](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Static Badge](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+[![Static Badge](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+
 Functional Requirements:
 - Users should be able to log in with their email and password
 - Users should be able sign up for an account using their email and password
