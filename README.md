@@ -13,6 +13,7 @@ Functional Requirements:
 - Users should be able to create messages
 - Users should receive notifications after receiving a message
 - to be continued
+
 Non-Functional Requirements:
 - Passwords must be hashed to maintain security
 - The app should be easy for first-time users
