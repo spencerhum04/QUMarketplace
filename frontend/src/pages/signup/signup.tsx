@@ -2,6 +2,30 @@ import { useState } from "react";
 import Navbar from "../../components/Navbar";
 import axios from "axios";
 import { USER_API_END_POINT } from "../../utils/constant";
+import Navbar from "../../components/Navbar";
+
+export default function Register() {
+    return (
+        <>
+            <Navbar />
+            <div className="flex flex-col gap-y-2 w-40">
+                <label>Name</label>
+                <input className="bg-white text-black" />
+            </div>
+            <div className="flex flex-col gap-y-2 w-40">
+                <label>Username</label>
+                <input className="bg-white text-black" />
+            </div>
+            <div className="flex flex-col gap-y-2 w-40">
+                <label>Email address</label>
+                <input className="bg-white text-black" />
+            </div>
+            <div className="flex flex-col gap-y-2 w-40">
+                <label>Password</label>
+                <input className="bg-white text-black" />
+            </div>
+import { useState } from "react";
+import Navbar from "../../components/Navbar";
 
 export default function Register() {
 
@@ -29,6 +53,9 @@ export default function Register() {
                 console.log(error);
             }
         }
+    const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        console.log(name, username, email, password);
     }
 
     return (
@@ -52,6 +79,7 @@ export default function Register() {
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="bg-white text-black" />
                 </div>
                 <button onClick={loginSignupHandler} className="bg-blue-300 p-4 w-40 cursor-pointer">Sign up</button>
+                <button onClick={loginSignupHandler} className="bg-blue-300 p-4 w-40">Sign up</button>
             </form>
         </>
     )
