@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
+import axios from "axios";
+import { USER_API_END_POINT } from "../../utils/constant";
 
 export default function Register() {
 
@@ -8,14 +10,25 @@ export default function Register() {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
     const loginSignupHandler = () => {
         setLogin(!login);
     }
 
-    const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(name, username, email, password);
+        if (login) {
+            try {
+                const res = await axios.post(`${USER_API_END_POINT}/login`, { email, password });
+            } catch (error) {
+                console.log(error);
+            }
+        } else {
+            try {
+                const res = await axios.post(`${USER_API_END_POINT}/register`, { name, username, email, password });
+            } catch (error) {
+                console.log(error);
+            }
+        }
     }
 
     return (
@@ -38,7 +51,7 @@ export default function Register() {
                     <label>Password</label>
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="bg-white text-black" />
                 </div>
-                <button onClick={loginSignupHandler} className="bg-blue-300 p-4 w-40">Sign up</button>
+                <button onClick={loginSignupHandler} className="bg-blue-300 p-4 w-40 cursor-pointer">Sign up</button>
             </form>
         </>
     )
