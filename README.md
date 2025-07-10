@@ -7,7 +7,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/spencerhum04/QUMarketplace/unit-tests.yml?style=for-the-badge&label=Unit%20Tests)](https://github.com/spencerhum04/QUMarketplace/blob/main/.github/workflows/unit-tests.yml)
 
-###Functional Requirements:
+### Functional Requirements:
 - Users should be able to log in with their email and password
 - Users should be able sign up for an account using their email and password
 - Users should be able to create posts
