@@ -1,4 +1,4 @@
-# QUMarketplace
+# QUMarketplace: Marketplace Web App
 
 [![Static Badge](https://img.shields.io/badge/React-09d9fe?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
 [![Static Badge](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
