@@ -31,14 +31,20 @@ The application follows a modular MERN architecture:
 - **Notifications:** Alerts users of new messages or relevant events.
 
 ## API Endpoints
-| Endpoint               | Method | Description                          |
-|------------------------|--------|------------------------------------|
-| `/api/users/signup`    | POST   | Register a new user                 |
-| `/api/users/login`     | POST   | Authenticate user and issue JWT    |
-| `/api/posts`           | GET    | Retrieve posts                     |
-| `/api/posts`           | POST   | Create a new post                  |
-| `/api/messages`        | POST   | Send a message                    |
-| `/api/notifications`   | GET    | Fetch notifications                |
+| Endpoint               | Method | Description                             | Auth Required |
+|------------------------|--------|---------------------------------------|---------------|
+| `/api/users/register`  | POST   | Register a new user                    | No            |
+| `/api/users/login`     | POST   | Authenticate user and issue JWT       | No            |
+| `/api/users/logout`    | GET    | Log out the current user               | No            |
+| `/api/users/bookmark/:id` | PUT  | Bookmark a post by ID                  | Yes           |
+| `/api/users/profile/:id` | GET   | Get profile data for user by ID        | Yes           |
+| `/api/users/otheruser/:id` | GET  | Get another user's profile info         | Yes           |
+
+| `/api/posts/create`    | POST   | Create a new post                     | Yes           |
+| `/api/posts/delete/:id`| DELETE | Delete a post by ID                   | Yes           |
+| `/api/posts/like/:id`  | PUT    | Like or dislike a post by ID         | Yes           |
+
+| `/api/messages/send`   | POST   | Send a message to another user       | Yes           |
 
 ## Security & Testing
 - Passwords hashed with **bcrypt** before storage  
