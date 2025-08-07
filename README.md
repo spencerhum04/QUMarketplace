@@ -39,11 +39,9 @@ The application follows a modular MERN architecture:
 | `/api/users/bookmark/:id` | PUT  | Bookmark a post by ID                  | Yes           |
 | `/api/users/profile/:id` | GET   | Get profile data for user by ID        | Yes           |
 | `/api/users/otheruser/:id` | GET  | Get another user's profile info         | Yes           |
-
 | `/api/posts/create`    | POST   | Create a new post                     | Yes           |
 | `/api/posts/delete/:id`| DELETE | Delete a post by ID                   | Yes           |
 | `/api/posts/like/:id`  | PUT    | Like or dislike a post by ID         | Yes           |
-
 | `/api/messages/send`   | POST   | Send a message to another user       | Yes           |
 
 ## Security & Testing
