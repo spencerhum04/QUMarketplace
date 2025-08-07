@@ -7,25 +7,41 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/spencerhum04/QUMarketplace/unit-tests.yml?style=for-the-badge&label=Unit%20Tests)](https://github.com/spencerhum04/QUMarketplace/blob/main/.github/workflows/unit-tests.yml)
 
-### Functional Requirements:
-- Users should be able to log in with their email and password
-- Users should be able sign up for an account using their email and password
-- Users should be able to create posts
-- Users should be able to create messages
-- Users should receive notifications after receiving a message
+QUMarketplace is a fullstack web application simulating a marketplace platform inspired by Facebook Marketplace. Users can sign up, log in, create posts to sell items, send messages, and receive notifications.
+This project is built using the MERN stack with TypeScript for type safety and Jest for unit testing, focusing on a clean architecture and scalable system design.
 
-### Non-Functional Requirements:
-- Passwords must be hashed to maintain security
-- The app should be easy for first-time users
-- The service should be available 99.9% of the time
-- Support for major browsers and devices
+## System Architecture
+The application follows a modular MERN architecture:
+- **Frontend:** React SPA providing a dynamic, responsive user interface
+- **Backend:** Express.js API server handles business logic, REST endpoints, and authentication
+- **Database:** MongoDB stores user data, posts, messages, and notifications
+- **Authentication:** JSON Web Tokens (JWT) for secure stateless authentication
+- **Security:** Passwords are hashed with bcrypt; cookies managed securely with cookie-parser
 
-### Dependencies:
-- bcrypt: Securely hashing and verifying passwords
-- cookie-parser: Middleware to parse cookies attached to client requests
-- dotenv: Loads environment variables from a .env file for configuration
-- express: Fast and minimal web framework for Node.js to build the server
-- jest: JavaScript testing framework used to write and run unit and integration tests
-- jsonwebtoken: Handles creation and verification of JSON Web Tokens for authentication
-- mongoose: MongoDB object modeling tool to manage data schemas and queries
-- nodemon: Development utility that automatically restarts the server on code changes
+## Key Features
+- User registration and login with secure authentication  
+- CRUD operations for marketplace posts  
+- User-to-user messaging system  
+- Real-time notifications on new messages
+
+## Database Schema
+- **Users:** Stores user profiles, credentials (hashed passwords), and authentication tokens.
+- **Posts:** Contains product listings with title, description, price, and seller info.
+- **Messages:** Tracks communication between users with timestamps.
+- **Notifications:** Alerts users of new messages or relevant events.
+
+## API Endpoints
+| Endpoint               | Method | Description                          |
+|------------------------|--------|------------------------------------|
+| `/api/users/signup`    | POST   | Register a new user                 |
+| `/api/users/login`     | POST   | Authenticate user and issue JWT    |
+| `/api/posts`           | GET    | Retrieve posts                     |
+| `/api/posts`           | POST   | Create a new post                  |
+| `/api/messages`        | POST   | Send a message                    |
+| `/api/notifications`   | GET    | Fetch notifications                |
+
+## Security & Testing
+- Passwords hashed with **bcrypt** before storage  
+- JWT tokens securely stored in HttpOnly cookies  
+- Input validation and sanitization on backend  
+- Unit tests run with **Jest**, integrated with GitHub Actions CI
