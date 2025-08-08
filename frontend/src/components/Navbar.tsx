@@ -1,19 +1,19 @@
-import React from 'react';
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+interface NavbarProps {
+    searchActive: boolean;
+}
+
+export default function Navbar({ searchActive }: NavbarProps) {
     return (
-        <>
-            <div className="bg-black h-16 w-full place-content-center px-6">
-                <div className="flex flex-row justify-between">
-                    <Link to="/">QUMarketplace</Link>
-                    <div className="flex flex-row gap-x-10">
-                        <Link to="/profile">Profile</Link>
-                        <Link to="/login">Login</Link>
-                        <Link to="/register">Register</Link>
-                    </div>
-                </div>
+        <div className="bg-black h-20 w-full px-6 flex items-center justify-between text-white">
+            <Link to="/" className="text-white font-bold text-xl">QUMarketplace</Link>
+
+            <div className="flex items-center gap-x-6">
+                <Link to="/profile">Profile</Link>
+                <Link to="/login">Login</Link>
+                <Link to="/register">Register</Link>
             </div>
-        </>
-    )
+        </div>
+    );
 }
