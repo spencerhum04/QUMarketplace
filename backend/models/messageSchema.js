@@ -1,4 +1,4 @@
-    import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const messageSchema = new mongoose.Schema({
     senderId: {
