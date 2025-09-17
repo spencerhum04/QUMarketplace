@@ -5,7 +5,6 @@
 [![Static Badge](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
 [![Static Badge](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/spencerhum04/QUMarketplace/unit-tests.yml?style=for-the-badge&label=Unit%20Tests)](https://github.com/spencerhum04/QUMarketplace/blob/main/.github/workflows/unit-tests.yml)
 
 QUMarketplace is a fullstack web application simulating a marketplace platform inspired by Facebook Marketplace. Users can sign up, log in, create posts to sell items, send messages, and receive notifications.
 This project is built using the MERN stack with TypeScript for type safety and Jest for unit testing, focusing on a clean architecture and scalable system design.
